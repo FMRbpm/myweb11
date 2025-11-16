@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>妈妈生日快乐！</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+    html,body{
+      margin:0;
+      padding:0;
+      background:linear-gradient(125deg,#FFF7E4 50%,#E0EEFF 100%);
+      min-height:100vh;
+      width:100vw;
+      overflow-x:hidden;
+      font-family:'ZCOOL KuaiLe',cursive,"微软雅黑",sans-serif;
+    }
+    .container{
+      max-width:500px;margin:0 auto;
+      padding:30px 10px 30px 10px;
+      min-height:98vh;
+      display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+      position:relative;
+    }
+    .cake{
+      width:170px;
+      margin:0 auto 10px auto;
+      animation: floatcake 2s infinite ease-in-out alternate;
+      position: relative;
+    }
+    @keyframes floatcake {
+      0%{ transform:translateY(0);}
+      100%{ transform:translateY(-18px);}
+    }
+    .candles {
+      position: absolute;
+      top:10px;
+      left:67px;
+      z-index:10;
+      width:32px;
+      height:40px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .candle{width:9px;height:32px; background:#fcdabf; border-radius:7px; position:relative;}
+    .flame{
+        position:absolute; left:2px; top:-9px;
+        width:6px;height:12px;
+        border-radius:3px 3px 7px 7px;
+        background:radial-gradient(ellipse at 50% 80%,#fffbc1 70%, #ffaa00 100%);
+        opacity:0.89; animation: flameflicker 1s infinite alternate;
+        box-shadow: 0 0 10px 2px #fffad7;
+    }
+    .candle:nth-child(2) .flame{animation-delay:0.5s;}
+    @keyframes flameflicker{
+      0%{transform:scaleY(0.9) scaleX(1);}
+      35%{transform:scaleY(1.03) scaleX(0.93);}
+      70%{transform:scaleY(0.92) scaleX(1.1);}
+      100%{transform:scaleY(0.96);}
+    }
+    .balloon-area{
+      position:absolute;top:6px;left:0;width:100vw;
+      pointer-events:none;z-index:1;
+    }
+    .balloon{
+      position:absolute; bottom:-80px;
+      border-radius:56% 54% 60% 48%/65% 60% 70% 80%;
+      opacity:0.93;
+      animation: balloonRise 10s ease-in infinite;
+      box-shadow:0 4px 20px #fdd1d177;
+    }
+    .balloon1{ left:55px; width:46px; height:55px; background:#F8E672; animation-delay:0s;}
+    .balloon2{ left:19vw; width:50px; height:60px; background:#F680C6; animation-delay:1s;}
+    .balloon3{ left:60vw; width:48px; height:57px; background:#64bded; animation-delay:1.8s;}
+    .balloon4{ left:82vw; width:41px; height:46px; background:#80EF82; animation-delay:2.2s;}
+    @keyframes balloonRise{
+      0%{bottom:-80px; opacity:0.8;}
+      10%{transform:translateX(13px);}
+      37%{transform:translateX(-25px);}
+      50%{opacity:1;}
+      82%{transform:translateX(23px);}
+      100%{bottom:90vh;opacity:0;}
+    }
+    .title {
+      color:#fc589b;
+      text-shadow:0 4px 11px #ffcbe2, 0 0 2px #fff;
+      font-size:2.2em;
+      margin-top:30px;
+      letter-spacing:2px;
+      font-weight:bold;
+      text-align:center;
+      margin-bottom:0px;
+    }
+    .subtitle{
+      font-size:1.13em;
+      color:#726ee7;
+      background: #fff3;
+      border-radius:13px;
+      padding:9px 11px;
+      margin:10px 0 25px 0;
+      text-align:center;
+      box-shadow:0 3px 10px #e9e1f677;
+    }
+    #dynamicBlessing{
+      background:#fff8e4e3;
+      color:#af3655;
+      font-size:1.22em;
+      border-radius:19px;
+      padding:13px 19px;
+      text-align:center;
+      min-height:34px;
+      margin:19px auto 26px auto;
+      box-shadow:0 3px 13px #ffe4f344;
+      font-family:'ZCOOL KuaiLe',cursive,'微软雅黑',sans-serif;
+      transition:background 0.3s;
+    }
+    .song-area{text-align:center; margin:12px auto;}
+    .play-btn{
+      border:none;
+      border-radius:50%;
+      width:54px;height:54px;
+      font-size:1.9em;
+      background:linear-gradient(120deg,#fed369 70%,#f558a1 100%);
+      color:#fff;box-shadow:0 2px 13px #ffc1e188;
+      cursor:pointer;outline:none;margin-bottom:3px;
+    }
+    .play-btn:active{background:linear-gradient(120deg,#ff99c5 70%,#d0cf89 100%);}
+    .footer{
+      color:#cab9b9;
+      font-size:.97em;text-align:center;letter-spacing:1px;
+      margin:10vw 0 2vw 0;
+    }
+    @media (max-width: 530px) {
+      .container{padding:7vw 2vw 6vw 2vw;}
+      .subtitle {font-size:1em}
+      #dynamicBlessing{font-size:1.07em; padding:9px 5vw;}
+    }
+  </style>
+</head>
+<body>
+  <div class="balloon-area">
+    <div class="balloon balloon1"></div>
+    <div class="balloon balloon2"></div>
+    <div class="balloon balloon3"></div>
+    <div class="balloon balloon4"></div>
+  </div>
+  <div class="container">
+    <div class="cake">
+      <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f382.svg" style="width:100%;" loading="lazy" alt="生日蛋糕"/>
+      <div class="candles">
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+      </div>
+    </div>
+    <div class="title">妈妈 41岁生快！</div>
+    <div class="subtitle">
+      <b>Keep Fit💪</b> | 生日快乐！<br>
+      减肥加油，健康自信，永远年轻漂亮～
+    </div>
+    <div class="song-area">
+      <div style="color:#fc589b;font-size:.98em;margin-bottom:4px;">🎵 生日歌 | 祝你生日快乐</div>
+      <button class="play-btn" id="playPauseBtn" onclick="toggleMusic()" title="播放/暂停生日歌">▶</button>
+      <audio id="birthdayAudio" src="hbd.mp3" preload="auto"></audio>
+    </div>
+    <div id="dynamicBlessing">
+      <!-- 动态打字祝福区 -->
+    </div>
+    <div class="footer">
+      爱你的孩子 · 用心为妈妈定制的小祝福
+    </div>
+  </div>
+  <script>
+    // 生日歌播放功能
+    const audio = document.getElementById('birthdayAudio');
+    const btn = document.getElementById('playPauseBtn');
+    let isPlaying = false;
+    function toggleMusic() {
+      if(audio.paused){
+        audio.play();
+        btn.textContent = "⏸";
+        isPlaying = true;
+      }else{
+        audio.pause();
+        btn.textContent = "▶";
+        isPlaying = false;
+      }
+    }
+    audio.addEventListener('ended', ()=>{
+      btn.textContent = "▶";
+      isPlaying = false;
+    });
+
+    // 打字机动态展现祝福
+    const blessings = [
+      "妈妈，祝你41岁生日快乐，永远年轻漂亮！",
+      "希望你的每一次努力都有回报，减肥成功不是梦想！",
+      "愿你的笑容像气球一样飞扬，生活如蛋糕甜美～",
+      "坚持运动，让健康幸福陪伴你每一天！",
+      "全世界最棒的妈妈，爱你哟❤️"
+    ];
+    let step = 0, i = 0;
+    let writing = false;
+    function typeBlessing() {
+      if(writing) return;
+      writing = true;
+      const text = blessings[step];
+      let disp = "";
+      let speed = 43;
+      i=0;
+      function showIt(){
+        disp += text[i];
+        document.getElementById('dynamicBlessing').innerHTML = disp + "<span style='color:#F586B9;'>|</span>";
+        i++;
+        if(i < text.length) setTimeout(showIt, speed);
+        else {
+          writing = false;
+          document.getElementById('dynamicBlessing').innerHTML = disp;
+          setTimeout(()=>{
+            step = (step+1)%blessings.length;
+            typeBlessing();
+          }, 2300);
+        }
+      }
+      showIt();
+    }
+    window.onload = function(){
+      setTimeout(typeBlessing, 900);
+    }
+    // 部分安卓低电量策略下不能自动播放，增加首次触摸启动context
+    document.body.addEventListener('touchstart',()=>{}, {passive:true, once:true});
+  </script>
+</body>
+</html>
